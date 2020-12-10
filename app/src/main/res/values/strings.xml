@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="web">Go to web</string>
+    <string name="goto2">Go to 2</string>
+    <string name="goto1">Go to 1</string>
+    <string name="backstring">String from 2 to 1</string>
+</resources>
