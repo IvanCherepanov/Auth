@@ -9,13 +9,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btn,btn2;
-    private EditText editText;
+    private TextView t;
+    private EditText editText, editText2;
     public static final int RET_ACT_CODE = 100;
 
     @Override
@@ -24,8 +27,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // ButterKnife
         btn = findViewById(R.id.button);
-        btn2 = findViewById(R.id.button2);
+        btn2 = findViewById(R.id.btn2);
+        t= findViewById(R.id.textView4);
         editText = findViewById(R.id.editText);
+        editText2 = findViewById(R.id.editText2);
+        //нопка браузера
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,15 +42,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //попадание во вторую активрость
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (editText.getText().toString().equals("admin")&&(editText2.getText().toString().equals("12345"))){
                 //  явное намерение
+                    Toast.makeText(getApplicationContext(),"Suscess", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(),MainActivity2.class);
                 intent.putExtra("val",editText.getText().toString());
                 //startActivity(intent);
                 startActivityForResult(intent,RET_ACT_CODE);
             }
+            else{
+                Toast.makeText(getApplicationContext(),"Incorrect input", Toast.LENGTH_SHORT).show();
+                }}
+
         });
 
     }

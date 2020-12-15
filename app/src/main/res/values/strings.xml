@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="Login">Login</string>
+    <string name="Password">Password</string>
     <string name="web">Go to web</string>
-    <string name="goto2">Go to 2</string>
-    <string name="goto1">Go to 1</string>
+    <string name="goto2"> Autorization </string>
+    <string name="goto1">To First page</string>
+    <string name="ch1">You are logined as: </string>
+    <string name="ch2">Error</string>
     <string name="backstring">String from 2 to 1</string>
 </resources>
